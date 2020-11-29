@@ -10,7 +10,10 @@ export class DrawerContentScreen extends Component {
     }
 
     handlerLogout(){
-        console.log("Logout");
+        //console.log("Logout"); // PONER ALGO PARA CERRAR LA SESION
+        //console.log(this.props.onLogout);
+        this.props.onLogout(); /* PROBAR A VER SI CIERRA SESION*/
+        console.log("logout");
     }
 
     render(){
@@ -21,16 +24,16 @@ export class DrawerContentScreen extends Component {
                     <View style={styles.topDrawer}>
                         <DrawerItem 
                             icon={() => <Icon type="material-community" name="home-outline" style={styles.icon}/>}
-                            label="Home"
-                            onPress={() => this.props.navigation.navigate("Home")}
+                            label="Personajes"
+                            onPress={() => this.props.navigation.navigate("Personajes")}
                         />
                         <DrawerItem 
                             icon={() => <Icon type="material-community" name="calendar" style={styles.icon}/>}
-                            label="Info"
-                            onPress={() => this.props.navigation.navigate("Info")}
+                            label="Casas"
+                            onPress={() => this.props.navigation.navigate("Casas")}
                         />
                     </View>
-                </DrawerContentScrollView>
+                </DrawerContentScrollView> 
                 <View style={styles.bottomDrawer}>
                     <DrawerItem 
                         icon={() => <Icon type="material-community" name="cogs" style={styles.icon}/>}
@@ -40,7 +43,7 @@ export class DrawerContentScreen extends Component {
                     <DrawerItem 
                         icon={() => <Icon type="material-community" name="logout" style={styles.icon}/>}
                         label="Logout"
-                        onPress={() => this.handlerLogout()}
+                        onPress={() => this.handlerLogout()} 
                     />
                 </View>
             </View>

@@ -3,10 +3,10 @@ import React, {Component} from "react";
 import { createDrawerNavigator } from '@react-navigation/drawer';
 
 // Screens
-import {HomeScreen} from "../Screens/HomeScreen";
-import {InfoScreen} from "../Screens/InfoScreen";
+import {CharacterScreen} from "../Screens/CharacterScreen";
+import {HouseScreen} from "../Screens/HouseScreen";
 import {DrawerContentScreen} from "../Screens/DrawerContentScreen";
-console.log(HomeScreen, InfoScreen);
+console.log(CharacterScreen, HouseScreen);
 
 const Drawer = createDrawerNavigator();
 
@@ -18,9 +18,10 @@ export class DrawerCustomNavigator extends Component {
                 initialRouteName="Home"
                 headerMode={'none'}
                 drawerContent={props => <DrawerContentScreen {...props}/>}
+                onLogout={() => this.setLogout()}
             >
-                <Drawer.Screen name="Home" component={HomeScreen} />
-                <Drawer.Screen name="Info" component={InfoScreen} />
+                <Drawer.Screen name="Personajes" component={CharacterScreen} />
+                <Drawer.Screen name="Casas" component={HouseScreen} />
             </Drawer.Navigator>
         );
     }
