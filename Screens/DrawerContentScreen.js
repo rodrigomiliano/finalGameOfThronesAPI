@@ -9,11 +9,9 @@ export class DrawerContentScreen extends Component {
         console.log("Configuration");
     }
 
-    handlerLogout(){
-        //console.log("Logout"); // PONER ALGO PARA CERRAR LA SESION
-        //console.log(this.props.onLogout);
+    handlerLogout(){        
         this.props.onLogout(); /* PROBAR A VER SI CIERRA SESION*/
-        console.log("logout");
+        console.log("Cerrando Sesión");
     }
 
     render(){
@@ -22,6 +20,11 @@ export class DrawerContentScreen extends Component {
             <View style={styles.container}>
                 <DrawerContentScrollView {...this.props}>
                     <View style={styles.topDrawer}>
+                    <DrawerItem 
+                            icon={() => <Icon type="material-community" name="home-outline" style={styles.icon}/>}
+                            label="Inicio"
+                            onPress={() => this.props.navigation.navigate("Inicio")}
+                        />
                         <DrawerItem 
                             icon={() => <Icon type="material-community" name="home-outline" style={styles.icon}/>}
                             label="Personajes"

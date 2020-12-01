@@ -8,8 +8,7 @@ export class CharacterScreen extends Component {
     state = { // del poyecto 2
 
         response: [],
-        estado: null,
-        //value: ''
+        estado: null,        
     
       };
 
@@ -17,8 +16,7 @@ export class CharacterScreen extends Component {
         var campoTexto = texto;
         this.setState({value: campoTexto});
         //console.log("Escribieron " + campoTexto);    
-      }
-    
+      }    
     
       handlerButton = () => { // del poyecto 2
         var characters = this.state.value;   
@@ -32,17 +30,7 @@ export class CharacterScreen extends Component {
             //console.log(this.state.response);
         });
     
-      }
-
-
-    /*render(){
-        return(
-            <View style={styles.container}>
-                <Text>This is the home screennn</Text>
-                <StatusBar style="auto" />
-            </View>
-        );
-    }*/
+      }  
 
     render(){
 
@@ -97,10 +85,6 @@ export class CharacterScreen extends Component {
         }
     
       }
-
-
-
-
     
 }
 

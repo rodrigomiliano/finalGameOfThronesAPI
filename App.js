@@ -1,15 +1,18 @@
 import React, {Component} from 'react';
 import { StyleSheet} from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
-import {DrawerDefaultNavigator} from './Navigators/DrawerDefaultNavigator';
-import {DrawerCustomNavigator} from './Navigators/DrawerCustomNavigator.js';
+import { createDrawerNavigator } from '@react-navigation/drawer';
+//import {DrawerDefaultNavigator} from './Navigators/DrawerDefaultNavigator';
+//import {DrawerCustomNavigator} from './Navigators/DrawerCustomNavigator.js';
 
+// IMPORT DE OTRAS PANTALLAS
 import LoginScreen from "./Screens/LoginScreen";
-import MainScreen from "./Screens/MainScreen";
+import {MainScreen} from "./Screens/MainScreen";
 import {CharacterScreen} from "./Screens/CharacterScreen";
 import {HouseScreen} from "./Screens/HouseScreen";
-import { createDrawerNavigator } from '@react-navigation/drawer';
 import {DrawerContentScreen} from "./Screens/DrawerContentScreen";
+
+
 
 const Drawer = createDrawerNavigator();
 
@@ -29,21 +32,6 @@ export default class App extends Component {
   }
 
   render(){
-    //return (
-    //  <NavigationContainer>
-    //    {/*<DrawerDefaultNavigator />*/}
-    //    <DrawerCustomNavigator />
-    //  </NavigationContainer>
-    //);
-
-    /*let screen;
-    if(this.state.isLoggedIn){
-       screen = <MainScreen onLogout={() => this.setLogout()}/>
-    } else {
-        screen = <LoginScreen onLogin={() => this.setLogin()}/>
-    }
-
-    return screen;*/
 
     let screen;
     if(!this.state.isLoggedIn)
@@ -57,7 +45,9 @@ export default class App extends Component {
           headerMode={'none'}
           drawerContent={props => <DrawerContentScreen {...props} onLogout={() => this.setLogout()}/>}
           >
+          <Drawer.Screen name="Inicio" component={MainScreen} />
           <Drawer.Screen name="Personajes" component={CharacterScreen} />
+          
           <Drawer.Screen name="Casas" component={HouseScreen} />
           
         </Drawer.Navigator>
@@ -65,8 +55,7 @@ export default class App extends Component {
         }
         return screen;
 
-  }
-  
+  }  
 
 }
 

@@ -1,6 +1,5 @@
-
 import React, {Component} from 'react';
-import {StyleSheet, Text, View, Button, ImageBackground} from 'react-native';
+import {StyleSheet, View, Button, ImageBackground} from 'react-native';
 
 import * as Google from 'expo-google-app-auth'
 
@@ -69,4 +68,3 @@ const styles = StyleSheet.create({
         marginBottom: 10,
     },
 });
-

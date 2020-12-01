@@ -1,31 +1,3 @@
-/*import { StatusBar } from 'expo-status-bar';
-import React, {Component} from 'react';
-import { StyleSheet, Text, View } from 'react-native';
-
-export class InfoScreen extends Component {
-
-    render(){
-        return(
-            <View style={styles.container}>
-                <Text>This is the info screen</Text>
-                <StatusBar style="auto" />
-            </View>
-        );
-    }
-    
-}
-
-
-const styles = StyleSheet.create({
-    container: {
-      flex: 1,
-      backgroundColor: '#fff',
-      alignItems: 'center',
-      justifyContent: 'center',
-    },
-  });
-  */
-
  import { StatusBar } from 'expo-status-bar';
  import axios from 'axios'; // del proyecto 2
  import React, {Component} from 'react';
@@ -36,8 +8,7 @@ const styles = StyleSheet.create({
      state = { // del poyecto 2
  
          response: [],
-         estado: null,
-         //value: ''
+         estado: null,         
      
        };
  
@@ -45,8 +16,7 @@ const styles = StyleSheet.create({
          var campoTexto = texto;
          this.setState({value: campoTexto});
          //console.log("Escribieron " + campoTexto);    
-       }
-     
+       }     
      
        handlerButton = () => { // del poyecto 2
          var houses = this.state.value;   
@@ -60,17 +30,7 @@ const styles = StyleSheet.create({
              //console.log(this.state.response);
          });
      
-       }
- 
- 
-     /*render(){
-         return(
-             <View style={styles.container}>
-                 <Text>This is the home screennn</Text>
-                 <StatusBar style="auto" />
-             </View>
-         );
-     }*/
+       }      
  
      render(){
  
@@ -121,11 +81,7 @@ const styles = StyleSheet.create({
            );   
          }
      
-       }
- 
- 
- 
- 
+       } 
      
  }
  
